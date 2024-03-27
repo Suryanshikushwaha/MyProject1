@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+<%if(locals.link) { %>
+    <h1>QR for <%= link %> generated</h1>
+    <p>Saved in ./public/images/<%= name%>.png</p>
+    <% } else {%>
+  <h1>Welcome to the QR Code Generator</h1>
+  <form action="/submit" method="POST">
+    <label for="link">Link :</label>
+    <input type="text" name="link" required>
+    <input type="submit" value="Submit">
+  </form>
+  <%}%>
+
+<%- include("partials/footer.ejs") %>
